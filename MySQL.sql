@@ -28,7 +28,7 @@ VALUES (NULL, 'Product A', 25.00, 'Description of Product A'),( NUll, 'Product B
 -- *** QUERIES TO WRITE ***
 
 -- 1. retrieved all customers who placed an order in the last 30 days
-SELECT DISTINCT customers.customer_name, customers.email FROM customers JOIN orders ON customers.id = orders.customer_id WHERE orders.order_date >= CURDATE() - INTERVAL 30 DAY
+SELECT customers.customer_name, customers.email FROM customers JOIN orders ON customers.id = orders.customer_id WHERE orders.order_date >= CURDATE() - INTERVAL 30 DAY
 
 -- 2. retrieved the total amount of orders for each customer
 SELECT customers.customer_name, SUM(orders.total_amount) AS total_spent FROM customers JOIN orders ON customers.id = orders.customer_id GROUP BY customers.customer_name
