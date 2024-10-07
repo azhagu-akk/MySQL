@@ -54,7 +54,7 @@ Below are some of the key SQL queries used in this project:
 
 1. **Retrieve all customers who have placed an order in the last 30 days:**
     ```sql
-    SELECT DISTINCT customers.customer_name, customers.email
+    SELECT customers.customer_name, customers.email
     FROM customers
     JOIN orders ON customers.id = orders.customer_id
     WHERE order_date >= CURDATE() - INTERVAL 30 DAY;
